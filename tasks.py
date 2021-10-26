@@ -80,3 +80,43 @@ def accumulator(string : str):
     # or
     return "-".join((letter * i).title() for i,letter in enumerate(string, 1))
 # print(accumulator("asdf"))
+
+def sum_triangular_numbers(n):
+    # output = []
+    # triangular_number = 0
+    # for i in range(1,n + 1):
+    #     triangular_number += i
+    #     output.append(triangular_number)
+    # sum_numbers = sum(output)
+    # return sum_numbers
+
+    # or
+
+    output2 = []
+    triangular_number2 = 0
+    # for i in range(1,n + 1):
+    #     triangular_number2 = (i(i + 1))/2
+    #     output2.append(triangular_number2)
+    sum_numbers2 = sum(((i * (i + 1))/2) for i in range(1,n + 1))
+    return sum_numbers2
+    
+# print(sum_triangular_numbers(4))
+
+
+# -----------------------------------------------------------------------------
+
+
+# https://www.codewars.com/kata/5667e8f4e3f572a8f2000039/train/python
+
+
+def deep_count(array):
+    count = 0
+    for item in array:
+        if type(item) is list:
+            count += 1
+            count += deep_count(item)
+        else:
+            count += 1
+    return count
+
+print(deep_count([1,2,3,[4,5]]))
