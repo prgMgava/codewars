@@ -119,4 +119,21 @@ def deep_count(array):
             count += 1
     return count
 
-print(deep_count([1,2,3,[4,5]]))
+# print(deep_count([1,2,3,[4,5]]))
+
+# https://www.codewars.com/kata/586ee462d0982081bf001f07/train/python
+
+def fillable(stock, merch, n):
+    # try:
+    #     return bool([item for item in stock if stock[merch] >= n])
+    # except KeyError:
+    #     return False
+
+    return stock.get(merch, 0) >= n
+# print(fillable({'football': 4, 'boardgame': 10, 'leggos': 1, 'doll': 5},'leggos', 2))
+
+
+# https://www.codewars.com/kata/586f61bdfd53c6cce50004ee/train/python
+
+def user_contacts(data):
+    return {item[0]: (item[1] if len(item) > 1 else None) for item in data}

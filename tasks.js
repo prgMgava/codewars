@@ -20,4 +20,13 @@ function deepCount(array){
     return array.reduce((a,b) => a + (Array.isArray(b) ? deepCount(b) : 0), array.length)
 }
 
-console.log(deepCount([1,2,3,[4,5,[6]]]))
+// console.log(deepCount([1,2,3,[4,5,[6]]]))
+
+
+// https://www.codewars.com/kata/5533c2a50c4fea6832000101/train/javascript
+
+function createDict(keys, values){
+  return Object.fromEntries(keys.map((item,idx) => [item,values[[idx]] || null]))
+}
+
+console.log(createDict(["a","c","d"],[1,2]))
