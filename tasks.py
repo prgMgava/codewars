@@ -137,3 +137,18 @@ def fillable(stock, merch, n):
 
 def user_contacts(data):
     return {item[0]: (item[1] if len(item) > 1 else None) for item in data}
+
+
+# https://www.codewars.com/kata/585d7b4685151614190001fd/train/python
+
+def get_total(costs, items, tax):
+    total = 0
+    for item in items:
+        if item in costs.keys():
+            total += costs[item]
+    output = total + tax * total
+    string = ("%.2f" % output)
+    print(string)
+    return float(string)
+    # o get resolve o Key error
+    return round(sum(costs.get(e, 0) for e in items) * (1 + tax), 2)
